@@ -1,0 +1,471 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+
+<title>Product Page</title>
+
+
+
+<style>
+
+    body {
+
+        margin: 0;
+
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        background: #fdf2f4;
+
+        overflow: hidden; 
+
+    }
+
+
+
+
+
+    .container {
+        display: flex;
+        height: 100vh;
+    }
+    .left {
+        width: 75%;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        position: relative;
+        box-sizing: border-box;
+        background-color: #E6D8DB; 
+        height: 100vh; 
+        overflow-y: auto; 
+
+    }
+    .left::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 30px;
+        height: 100%;
+        background: linear-gradient(to left, rgba(0,0,0,0.25), rgba(0,0,0,0));
+        z-index: 10;
+    }
+    .product-section {
+        width: 100%;
+        max-width: 600px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 40px;
+        flex-shrink: 0; 
+    }
+
+
+
+    .product-img {
+
+        width: 300px;
+
+        border-radius: 20px;
+
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+
+        margin-bottom: 20px;
+
+    }
+    .product-title {
+        font-size: 2rem;
+        color: #333;
+        margin-bottom: 15px;
+    }
+
+    .product-title a {
+        text-decoration: none;
+        color: black;
+    }
+
+
+    .quantity-section {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+
+
+    select {
+
+        padding: 8px 12px;
+
+        border-radius: 8px;
+
+        border: 1px solid #ccc;
+
+        background: #fff;
+
+        font-size: 1rem;
+
+    }
+
+
+
+    .product-description {
+
+        max-width: 500px;
+
+        color: #555;
+
+        margin-bottom: 30px;
+
+        line-height: 1.6;
+
+    }
+
+
+
+    .reviews-container {
+
+        width: 100%;
+
+        overflow-x: auto; 
+
+        white-space: nowrap;
+
+        padding-bottom: 15px;
+
+        box-sizing: border-box;
+
+        display: flex;
+
+        gap: 15px;
+
+        flex-shrink: 0; 
+
+    }
+
+
+
+    .review-card {
+
+        display: inline-block;
+
+        width: 280px;
+
+        padding: 15px;
+
+        background: rgba(255, 255, 255, 0.8);
+
+        border-radius: 12px;
+
+        border: 1px solid #ddd;
+
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+
+        text-align: left;
+
+        vertical-align: top;
+
+        position: relative;
+
+    }
+
+
+
+    .review-card strong {
+
+        display: block;
+
+        margin-bottom: 5px;
+
+        color: #333;
+
+    }
+
+
+
+    .review-card p {
+
+        margin: 0;
+
+        font-size: 0.9rem;
+
+        color: #666;
+
+        white-space: normal;
+
+    }
+
+
+
+    .tag-row {
+
+        margin-bottom: 10px;
+
+    }
+
+
+
+    .box {
+        display: inline-block;
+        padding: 5px 8px;
+        margin-right: 5px;
+
+        margin-bottom: 5px;
+
+        background: #e0f7f4;
+
+        border-radius: 8px;
+
+        font-size: 0.8rem;
+
+        color: #333;
+
+    }
+
+    button {
+
+        margin-top: 20px;
+
+        padding: 12px 25px;
+
+        border: none;
+
+        border-radius: 20px;
+
+        background: #BA8699;
+
+        color: white;
+
+        font-size: 1.1rem;
+
+        cursor: pointer;
+
+        transition: background 0.3s ease;
+
+        flex-shrink: 0; 
+
+    }
+
+
+
+    button:hover {
+
+        background: #9c687b;
+
+    }
+
+
+
+    .right {
+
+        width: 25%;
+
+        height: 100vh;
+
+        overflow: hidden;
+
+        position: relative;
+
+    }
+
+
+
+    .right video {
+
+        width: 100%;
+
+        height: 100%;
+
+        object-fit: cover;
+
+    }
+
+
+
+    .left::-webkit-scrollbar {
+
+        width: 10px;
+
+    }
+
+    .left::-webkit-scrollbar-track {
+
+        background: rgba(0, 0, 0, 0.05);
+
+    }
+
+    .left::-webkit-scrollbar-thumb {
+
+        background: #BA8699;
+
+        border-radius: 5px;
+
+    }
+
+
+
+    .reviews-container::-webkit-scrollbar {
+
+        height: 8px;
+
+    }
+
+    .reviews-container::-webkit-scrollbar-track {
+
+        background: rgba(0, 0, 0, 0.05);
+
+        border-radius: 4px;
+
+    }
+
+    .reviews-container::-webkit-scrollbar-thumb {
+
+        background: #ba8699;
+
+        border-radius: 4px;
+
+    }
+    .product-price {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #ba8699;
+    background: #fff;
+    padding: 5px 12px;
+    border-radius: 12px;
+    display: inline-block;
+}
+
+</style>
+
+</head><body><div class="container">
+
+
+
+    <div class="left">
+
+
+
+        <div class="product-section">
+
+            <img src="fashion/tops2.jpeg" alt="MARS Sky Liner" class="product-img">
+
+            <h2 class="product-title">
+                <a href="tops.html">POPCORN TEXTURE TOP </a>
+            </h2>
+            <p class="product-price">₹300</p>
+
+
+
+            <div class="quantity-section">
+
+                <label>Quantity:</label>
+
+                <select>
+
+                    <option>1</option>
+
+                    <option>2</option>
+
+                    <option>3</option>
+
+                </select>
+
+            </div>
+
+
+
+            <p class="product-description">
+
+                Good quality top !
+
+            </p>
+
+
+
+            <div class="reviews-container">
+
+                <div class="review-card">
+
+                    <strong>Riya</strong>
+
+                    <div class="tag-row"><div class="box">Excellent</div></div>
+
+                    <p>good colour and super fitting.</p>
+
+                </div>
+
+                <div class="review-card">
+
+                    <strong>Soniya</strong>
+
+                    <div class="tag-row"><div class="box">Good</div><div class="box">Loved it</div></div>
+
+                    <p>Great value. The dress is soo good.</p>
+
+                </div>
+
+                <div class="review-card">
+
+                    <strong>Harini</strong>
+
+                    <div class="tag-row"><div class="box">Perfect</div></div>
+
+                    <p>I absolutely loved it! Gives a fantastic look .</p>
+
+                </div>
+
+                <div class="review-card">
+
+                    <strong>Nisha</strong>
+
+                    <div class="tag-row"><div class="box">Amazing</div></div>
+
+                    <p>Truly amazing .  Highly recommended.</p>
+
+                </div>
+
+                <div class="review-card">
+
+                    <strong>Sara Caroline</strong>
+
+                    <div class="tag-row"><div class="box">Loved it</div></div>
+
+                    <p>Best top I have used in this price range! Will buy again.</p>
+
+                </div>
+
+            </div>
+
+
+
+            <button onclick="goNext()">Pick me✨</button>
+
+        </div>
+
+
+
+    </div> <div class="right">
+
+        <video autoplay muted loop>
+
+            <source src="fashion/topsm2.mp4" type="video/mp4">
+
+        </video>
+
+    </div>
+
+
+
+</div> <script>
+
+    function goNext() {
+
+        window.location.href = "pickme.html"; 
+
+    }
+
+</script>
+
+</body></html>

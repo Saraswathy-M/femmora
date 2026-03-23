@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pick Me</title>
+
+<style>
+body {
+    background-color: #d8b4b4;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    width: 320px;
+    padding: 25px;
+    background: #ffffff30;
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
+}
+
+h2 {
+    font-family: "Brush Script MT", cursive;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #5a3e45;
+}
+
+label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #e0f7f4;
+}
+
+button {
+    background-color: #e0f7f4;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #BA8699;
+    color: white;
+}
+
+#videoContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    background: black;
+}
+
+#videoContainer video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container" id="formBox">
+    <h2>Pick Me 💖</h2>
+
+    <form id="pickForm">
+        <label>Name</label>
+        <input type="text" required>
+
+        <label>Address</label>
+        <input type="text" required>
+
+        <label>Contact</label>
+        <input type="tel" required>
+
+        <label>Pin Code</label>
+        <input type="text" required>
+
+        <button type="submit">Submit ✨</button>
+    </form>
+</div>
+
+<div id="videoContainer">
+    <video id="successVideo">
+        <source src="bg/thankyou.mp4" type="video/mp4">
+    </video>
+</div>
+
+<script>
+document.getElementById("pickForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    document.getElementById("formBox").style.display = "none";
+
+    let videoContainer = document.getElementById("videoContainer");
+    let video = document.getElementById("successVideo");
+
+    videoContainer.style.display = "block";
+
+    video.play();
+
+    video.onended = function() {
+        window.location.href = "index.html";
+    };
+});
+</script>
+
+</body>
+</html>

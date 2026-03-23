@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+
+<style>
+body {
+    background-color: #d8b4b4;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    width: 300px;
+    padding: 30px;
+    background: #ffffff30;
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
+}
+h2 {
+    font-family: "Brush Script MT", cursive;
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    color: #5a3e45;
+}
+
+/* Labels */
+label {
+    display: block;
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+    text-align: left;
+}
+
+/* Inputs */
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: #e0f7f4;
+    font-size: 0.9rem;
+}
+
+/* Button */
+button {
+    background-color: #e0f7f4;
+    border: none;
+    padding: 10px 25px;
+    font-size: 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #BA8699;
+    color: white;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2> welcome babe ♥</h2>
+
+    <form id="loginForm">
+        <label for="name">Username</label>
+        <input type="text" id="name" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" required>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<script>
+document.getElementById("loginForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let user = {
+        name: document.getElementById("name").value,
+        password: document.getElementById("password").value,
+    };
+
+    localStorage.setItem("user", JSON.stringify(user));
+    alert("Details Submitted!");
+
+    // Redirect to home page
+    window.location.href = "index.html";
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eyeglam</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .bg-video {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .overlay {
+            background: rgba(225, 192, 203, 0.4); 
+            min-height: 100vh;
+            padding: 40px;
+            box-sizing: border-box;
+        }
+
+        .heading {
+            text-align: center;
+            font-size: 3rem;
+            color: #4a1a2c;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .card {
+            text-decoration: none;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card img {
+            width: 100%;
+            max-width: 300px;
+            aspect-ratio: 1/1; 
+            object-fit: cover;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+            transition: 0.3s ease-in-out;
+        }
+
+        .card:hover img {
+            transform: scale(1.05);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .card p {
+            margin-top: 15px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #4a1a2c;  
+            
+    
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8), 
+                         0px 0px 5px rgba(255, 255, 255, 0.5); 
+            
+            letter-spacing: 0.5px;
+        }
+
+        .makeup-link {
+            text-decoration: none;
+            display: block; 
+            text-align: center;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<video autoplay muted loop class="bg-video">
+    <source src="bg/facebg.mp4" type="video/mp4">
+</video>
+
+<div class="overlay">
+    <a href="makeup.html" class="makeup-link">
+        <h1 class="heading"> FLAWLESS BASE </h1>
+    </a>
+
+    <div class="products">
+        <a href="face1.html" class="card">
+            <img src="makeup/face1.jpeg" alt="Glossy">
+            <p> MAYBELLINE FIT ME</p>
+        </a>
+
+        <a href="face2.html" class="card">
+            <img src="makeup/face2.jpeg" alt="Smokey Kit">
+            <p> MARS FOUNDATION </p>
+        </a>
+
+        <a href="face3.html" class="card">
+            <img src="makeup/face3.jpeg" alt="Shimmer Eyes">
+            <p> MARS BLUSH</p>
+        </a>
+
+        <a href="face4.html" class="card">
+            <img src="makeup/face4.jpeg" alt="Soft Nude Kit">
+            <p>SWISS BEAUTY BLUSH</p>
+        </a>
+
+        <a href="face5.html" class="card">
+            <img src="makeup/face5.jpeg" alt="Bold Liner Pack">
+            <p>SWISS BEAUTY CONCEALER</p>
+        </a>
+
+        <a href="face6.html" class="card">
+            <img src="makeup/face6.jpeg" alt="Glitter Drops">
+            <p>KAY BEAUTY BLUSH</p>
+        </a>
+    </div>
+</div>
+
+</body>
+</html>

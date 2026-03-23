@@ -1,0 +1,131 @@
+<html>
+<head>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow-x: hidden;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .video-background {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: -1; 
+            overflow: hidden;
+        }
+
+        .video-background video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            background: rgba(255, 255, 255, 0.1); 
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 3rem;
+            margin: 0;
+            padding-top: 40px;
+            color: black;
+            text-transform: lowercase;
+            letter-spacing: 2px;
+        }
+
+        .selfcare {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            padding: 80px 20px;
+            flex-wrap: wrap;
+        }
+
+        .selfcare div {
+            text-align: center;
+        }
+
+        .selfcare img {
+            width: 280px; 
+            height: 350px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            transition: transform 0.4s ease;
+            border: 2px solid white;
+        }
+
+        .selfcare img:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            border: 4px solid pink;
+        }
+
+        .selfcare-link {
+            text-decoration: none;
+            color: black;
+            font-weight: 600;
+            display: block;
+            margin-top: 20px;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+
+        .selfcare-link:hover {
+            color: #333; 
+        }
+       .home-link {
+            text-decoration: none;
+            display: inline-block; 
+            width: 100%;           
+        }
+
+        .home-link h2:hover {
+              cursor: pointer;       
+              color: #444;           
+              transition: 0.3s;      
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="video-background">
+        <video autoplay muted loop playsinline>
+            <source src="bg/femmora1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="content">
+        <a href="index.html" class="home-link">
+        <h2>selfcare</h2>
+        </a>
+        <div class="selfcare">
+            <div>
+                <a href="skincare.html" class="selfcare-link">
+                    <img src="selfcare/skincaree.jpeg">
+                    <p>SKINCARE</p>
+                </a>
+            </div>
+
+            <div>
+                <a href="haircare.html" class="selfcare-link">
+                    <img src="selfcare/haircaree.jpeg">
+                    <p>HAIRCARE</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
